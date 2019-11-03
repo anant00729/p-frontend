@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.line-height{
+  height: 1px;
+}
+
+.line-height-one{
+  height: 1px;
+}
+
+.app-overlay{
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.card-width {
+  width: 25rem;
+}
+
+.card-width-content{
+  width: 24rem;
+}
+
+@media (min-width: 768px) { 
+  .card-width-content{
+    width: 12rem;
+    
+  }
+  
+ }
