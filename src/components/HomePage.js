@@ -4,12 +4,13 @@ import fb from '../images/facebook.png';
 import insta from '../images/instagram.png';
 import tw from '../images/twitter.png';
 import li from '../images/linkedin.png';
-
+import testone from '../images/testTwo.png';
 
 export default class HomePage extends Component {
 
   state = {
-    image : 'https://mir-cdn.behance.net/v1/assets//1f294367814fa2f58be274b1a3c40d6f/c4262aa6-d869-4235-b4b5-80e9330be718_rwc_0x0x1400x206x1400.jpg?h=31d9ea10600ab2f0f31add00298c1319'
+    //image : 'https://mir-cdn.behance.net/v1/assets//1f294367814fa2f58be274b1a3c40d6f/c4262aa6-d869-4235-b4b5-80e9330be718_rwc_0x0x1400x206x1400.jpg?h=31d9ea10600ab2f0f31add00298c1319'
+    image : testone
   }
 
   render() {
@@ -315,7 +316,7 @@ export default class HomePage extends Component {
                    </div>
                 </li>
              </ul>
-             
+
 
 
             </div>

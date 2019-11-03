@@ -10,7 +10,7 @@ export default class Header extends Component {
   render() {
     return ( 
       <div>
-        <section className="fixed bg-gray-800 h-16 w-full top-0 flex shadow-md justify-between px-4">
+        <section className="fixed bg-gray-900 h-12 xl:h-16 w-full top-0 flex shadow-md justify-between px-4">
                 <div className="w-1/3 h-full flex content-center flex-wrap cursor-pointer">
                     <Link href="" className="text-center flex items-center">
                       <div className="w-12 h-12 rounded-full">
