@@ -4,6 +4,7 @@ import profileReducer from './profileReducer'
 import authReducer from './authReducer' 
 import articleReducer from './articleReducer' 
 import authorReducer from './authorReducer' 
+import themeReducer from './themeReducer' 
 
 
 
@@ -12,5 +13,6 @@ export default combineReducers({
     profile : profileReducer,
     auth : authReducer,
     article : articleReducer,
-    authors : authorReducer
+    authors : authorReducer,
+    theme : themeReducer
 })

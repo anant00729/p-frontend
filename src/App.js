@@ -31,6 +31,13 @@ if(localStorage.Admin_Token){
 }
 
 
+// if(localStorage.Theme){
+//   const res_admin_d = {}
+//   res_admin_d.token = localStorage.Admin_Token
+//   store.dispatch(setCurrentAdmin(res_admin_d)) 
+// }
+
+
 
 
 

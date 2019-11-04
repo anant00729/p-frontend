@@ -11,6 +11,7 @@ export const GET_AUTHOR_COUNT = 'GET_AUTHOR_COUNT'
 export const AAD_AUTHOR = 'AAD_AUTHOR'
 export const GET_ARTICLE_COUNT_AND_AUTHOR_LIST = 'GET_ARTICLE_COUNT_AND_AUTHOR_LIST'
 export const ADD_SINGLE_ARTICLE = 'ADD_SINGLE_ARTICLE'
+export const CHANGE_THEME = 'CHANGE_THEME'
 
 
 
@@ -50,6 +51,8 @@ export const R_AddAuthor = '/adminn/admin-add-author'
 
 
 export const BASE_URL = "http://localhost:3001"
+export const EARTH_THEME = "EARTH_THEME"
+export const MOON_THEME = "MOON_THEME"
 
 export const NOR = 'nor'
 export const ADMIN = 'admin'
