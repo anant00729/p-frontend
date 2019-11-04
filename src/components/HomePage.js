@@ -137,13 +137,13 @@ export default class HomePage extends Component {
 
               </div>
 
-              <div class="xl:mx-0 mx-10 xl:mt-12 mt-0 xl:text-base text-sm">
+              <div class="xl:mx-0 mx-10 xl:mt-12 mt-0 xl:text-base text-xs sm:text-base">
                 <ul class="flex justify-center xl:justify-start">
-                   <li class="px-4 my-2 py-2 border-b-4 border-indigo-500 rounded-b-sm rounded-t-sm text-indigo-500 cursor-pointer">Work</li>
-                   <li class="px-4 py-4 cursor-pointer">Moodboard</li>
-                   <li class="px-4 py-4 cursor-pointer">Android</li>
-                   <li class="px-4 py-4 cursor-pointer">Flutter</li>
-                   <li class="px-4 py-4 cursor-pointer">NodeJS</li>
+                   <li class="px-2 xl:px-4 my-2 py-2 border-b-4 border-indigo-500 rounded-b-sm rounded-t-sm text-indigo-500 cursor-pointer">Work</li>
+                   <li class="px-2 xl:px-4 py-4 cursor-pointer">Moodboard</li>
+                   <li class="px-2 xl:px-4 py-4 cursor-pointer">Android</li>
+                   <li class="px-2 xl:px-4 py-4 cursor-pointer">Flutter</li>
+                   <li class="px-2 xl:px-4 py-4 cursor-pointer">NodeJS</li>
                 </ul>
              </div>
              <ul class="flex flex-wrap justify-center xl:justify-start">
