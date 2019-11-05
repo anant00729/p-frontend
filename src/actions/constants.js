@@ -53,6 +53,7 @@ export const R_AddAuthor = '/adminn/admin-add-author'
 export const BASE_URL = "http://localhost:3001"
 export const EARTH_THEME = "EARTH_THEME"
 export const MOON_THEME = "MOON_THEME"
+export const URAN_THEME = "URAN_THEME"
 
 export const NOR = 'nor'
 export const ADMIN = 'admin'

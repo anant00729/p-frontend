@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import earth from '../svg/009-earth.svg';
+import earth from '../svg/svg/planet.svg';
 import fb from '../images/facebook.png';
 import insta from '../images/instagram.png';
 import tw from '../images/twitter.png';
@@ -8,6 +8,7 @@ import testone from '../images/testTwo.png';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { onChangeTheme } from '../actions/themeActions';
+import { EARTH_THEME , MOON_THEME } from '../actions/constants';
 
 
  class HomePage extends Component {
@@ -32,6 +33,15 @@ import { onChangeTheme } from '../actions/themeActions';
   render() {
     let { image , app_colors } = this.state
     const a = app_colors
+
+    let card_color = ''
+
+    if(a.type === EARTH_THEME){
+      card_color = a.s_color
+    }else {
+      card_color = a.p_color
+    }
+
     return (
       
       <div className="w-full relative pt-12">
@@ -43,15 +53,15 @@ import { onChangeTheme } from '../actions/themeActions';
         <div className={`w-full -mt-32 xl:-mt-12 mx-auto flex h-full ${a.s_color}`}>
           <div className="hidden xl:w-1/3  xl:h-full xl:visible xl:flex xl:justify-center xl:flex-col xl:pl-10 xl:pr-4 card-width">
 
-            <div className="xl:bg-white xl:shadow-md xl:rounded pb-8 z-10">
+            <div className={`${card_color} xl:shadow-md xl:rounded pb-8 z-10`}>
               {/* this is iamge */}
               <div className="w-24 h-24 self-center mt-8 mx-auto bg-white rounded-full border-1 border-white shadow-md">
                 <img src={earth} className="w-full h-full m-auto h-full self-center"alt="asdasd"/>
               </div>
               
               {/* My Info */}
-              <h3 className="text-xl text-center mt-2">Anant S Awasthy</h3>
-              <div className="text-gray-700 text-center">
+              <h3 className={`text-xl text-center mt-2 ${a.t_color}`}>Anant S Awasthy</h3>
+              <div className={`text-center ${a.tl_color}`}>
                   <p>Full Stack Developer</p>
                   <p>Binary Numbers, Freelance work</p>
                   <p>Mumbai, India</p>
@@ -75,15 +85,15 @@ import { onChangeTheme } from '../actions/themeActions';
 
               <ul className="px-10">
                 <li className="my-2">
-                  <p className="text-md ">Android / IOS / React / Flutter</p> 
-                  <div className="text-gray-700 text-sm">
+                  <p className={`text-md ${a.t_color}`}>Android / IOS / React / Flutter</p> 
+                  <div className={`text-sm ${a.tl_color}`}>
                     Mobile Lead at Binary Numbers <br/>Mumbai, India  
                   </div>
                   
                 </li>
                 <li className="my-2">
-                  <p className="text-md ">Android and Nodejs Developer</p> 
-                  <div className="text-gray-700 text-sm">
+                  <p className={`text-md ${a.t_color}`}>Android and Nodejs Developer</p> 
+                  <div className={`text-sm ${a.tl_color}`}>
                     Emefocus <br/>Bangalore, India  
                   </div>
                 </li>
@@ -106,8 +116,8 @@ import { onChangeTheme } from '../actions/themeActions';
                 </div>
                 
                 {/* My Info */}
-                <h3 className="text-2xl text-center mt-2">Anant S Awasthy</h3>
-                <div className="text-gray-700 text-center">
+                <h3 className={`text-xl text-center mt-2 ${a.t_color}`}>Anant S Awasthy</h3>
+                <div className={`text-center ${a.tl_color}`}>
                   <p>Full Stack Developer</p>
                   <p>Binary Numbers, Freelance work</p>
                   <p>Mumbai, India</p>
@@ -131,15 +141,15 @@ import { onChangeTheme } from '../actions/themeActions';
 
                 <ul className="px-10">
                   <li className="my-2">
-                    <p className="text-md ">Android / IOS / React / Flutter</p> 
-                    <div className="text-gray-700 text-sm">
+                    <p className={`text-md ${a.t_color}`}>Android / IOS / React / Flutter</p> 
+                    <div className={`text-sm ${a.tl_color}`}>
                       Mobile Lead at Binary Numbers <br/>Mumbai, India  
                     </div>
                     
                   </li>
                   <li className="my-2">
-                    <p className="text-md ">Android and Nodejs Developer</p> 
-                    <div className="text-gray-700 text-sm">
+                    <p className={`text-md ${a.t_color}`}>Android and Nodejs Developer</p> 
+                    <div className={`text-sm ${a.tl_color}`}>
                       Emefocus <br/>Bangalore, India  
                     </div>
                   </li>
@@ -157,182 +167,87 @@ import { onChangeTheme } from '../actions/themeActions';
 
               <div className="xl:mx-0 mx-10 xl:mt-12 mt-0 xl:text-base text-xs sm:text-base transparent">
                 <ul className="flex justify-center xl:justify-start ">
-                   <li className="px-2 xl:px-4 my-2 py-2 border-b-4 border-indigo-500 rounded-b-sm rounded-t-sm text-indigo-500 cursor-pointer">Work</li>
-                   <li className="px-2 xl:px-4 py-4 cursor-pointer">Moodboard</li>
-                   <li className="px-2 xl:px-4 py-4 cursor-pointer">Android</li>
-                   <li className="px-2 xl:px-4 py-4 cursor-pointer">Flutter</li>
-                   <li className="px-2 xl:px-4 py-4 cursor-pointer">NodeJS</li>
+                   <li className={`px-2 xl:px-4 my-2 py-2 border-b-4 ${a.st_color_b} rounded-b-sm rounded-t-sm ${a.st_color} cursor-pointer`}>Work</li>
+                   <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>Moodboard</li>
+                   <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>Android</li>
+                   <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>Flutter</li>
+                   <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>NodeJS</li>
                 </ul>
              </div>
              <ul className="flex flex-wrap justify-center xl:justify-start">
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
+                <li className={`mt-2 p-2`}>
+                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
+                      <div className="py-4 px-6">
+                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className="mt-2 p-2">
-                   <div className="card-width-content rounded overflow-hidden shadow ">
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="px-6 py-4">
-                         <div className="font-bold text-md mb-2">The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
+                
              </ul>
 
 

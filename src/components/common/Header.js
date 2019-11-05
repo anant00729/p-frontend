@@ -6,7 +6,8 @@ import PropTypes from 'prop-types'
 import alien from '../../svg/001-alien.svg';
 import earth from '../../svg/009-earth.svg';
 import moon from '../../svg/moon.svg';
-import { EARTH_THEME , MOON_THEME } from '../../actions/constants';
+import uran from '../../svg/svg/uranus.svg';
+import { EARTH_THEME , MOON_THEME, URAN_THEME } from '../../actions/constants';
 
 import { onChangeTheme } from '../../actions/themeActions';
 import { R_HOME } from '../../actions/constants';
@@ -52,16 +53,24 @@ class Header extends Component {
                   <div 
                   onClick={() => this.onThemeChange(EARTH_THEME)}
                   className=" flex items-center px-2">
-                    <img src={earth} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto bg-white rounded-full border-1 border-white self-center"alt="asdasd"/>
-                    <p className="text-white ml-2 text-sm xl:text-base">Earth</p>  
+                    <img src={earth} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto  rounded-full self-center"alt="asdasd"/>
+                    <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Earth</p>  
                   </div>
 
 
                   <div 
                   onClick={() => this.onThemeChange(MOON_THEME)}
                   className=" flex items-center px-2">
-                    <img src={moon} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto bg-white rounded-full border-1 border-white self-center"alt="asdasd"/>
-                    <p className="text-white ml-2 text-sm xl:text-base">Moon</p>  
+                    <img src={moon} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto  rounded-full self-center"alt="asdasd"/>
+                    <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Moon</p>  
+                  </div>
+
+
+                  <div 
+                  onClick={() => this.onThemeChange(URAN_THEME)}
+                  className=" flex items-center px-2">
+                    <img src={uran} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto  rounded-full self-center"alt="asdasd"/>
+                    <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Uranus</p>  
                   </div>
 
                 </div>
