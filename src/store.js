@@ -21,7 +21,6 @@ const middelware = [thunk]
 //     }
 //  }
 
-
 const store = createStore(rootReducer, initialState , applyMiddleware(...middelware))
 
 

@@ -9,12 +9,12 @@ class RHome extends Component {
     const isP = !pathname.includes(R_Admin)
     return (
       <Fragment>
-        <Route path={R_HOME} component={Home} />
-        {/* { isP ? 
         
+        { isP ? 
+          <Route path={R_HOME} component={Home} />
         :
         <Route path={R_Admin} component={AdminMain} />
-      } */}
+      }
       </Fragment>
       
     );

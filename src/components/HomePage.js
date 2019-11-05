@@ -41,6 +41,9 @@ import { EARTH_THEME  } from '../actions/constants';
       card_color = a.p_color
     }
 
+    console.log('a.ct_color :', a.ct_color);
+    
+
     return (
       
       <div className="w-full relative pt-12">
@@ -59,8 +62,8 @@ import { EARTH_THEME  } from '../actions/constants';
               </div>
               
               {/* My Info */}
-              <h3 className={`text-xl text-center mt-2 ${a.t_color}`}>Anant S Awasthy</h3>
-              <div className={`text-center ${a.tl_color}`}>
+              <h3 className={`text-xl text-center mt-2 ${a.ct_color}`}>Anant S Awasthy</h3>
+              <div className={`text-center ${a.ct_color}`}>
                   <p>Full Stack Developer</p>
                   <p>Binary Numbers, Freelance work</p>
                   <p>Mumbai, India</p>
@@ -84,15 +87,15 @@ import { EARTH_THEME  } from '../actions/constants';
 
               <ul className="px-10">
                 <li className="my-2">
-                  <p className={`text-md ${a.t_color}`}>Android / IOS / React / Flutter</p> 
-                  <div className={`text-sm ${a.tl_color}`}>
+                  <p className={`text-md ${a.ct_color}`}>Android / IOS / React / Flutter</p> 
+                  <div className={`text-sm ${a.ct_color}`}>
                     Mobile Lead at Binary Numbers <br/>Mumbai, India  
                   </div>
                   
                 </li>
                 <li className="my-2">
-                  <p className={`text-md ${a.t_color}`}>Android and Nodejs Developer</p> 
-                  <div className={`text-sm ${a.tl_color}`}>
+                  <p className={`text-md ${a.ct_color}`}>Android and Nodejs Developer</p> 
+                  <div className={`text-sm ${a.ct_color}`}>
                     Emefocus <br/>Bangalore, India  
                   </div>
                 </li>
