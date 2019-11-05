@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/p-frontend/static/css/main.40c11b57.chunk.css",
+    "main.js": "/p-frontend/static/js/main.6ebef097.chunk.js",
+    "main.js.map": "/p-frontend/static/js/main.6ebef097.chunk.js.map",
+    "runtime~main.js": "/p-frontend/static/js/runtime~main.4f154482.js",
+    "runtime~main.js.map": "/p-frontend/static/js/runtime~main.4f154482.js.map",
+    "static/js/2.aa304f87.chunk.js": "/p-frontend/static/js/2.aa304f87.chunk.js",
+    "static/js/2.aa304f87.chunk.js.map": "/p-frontend/static/js/2.aa304f87.chunk.js.map",
+    "index.html": "/p-frontend/index.html",
+    "precache-manifest.bb0d3fabeee6ce1b2fd6c05909bb6caf.js": "/p-frontend/precache-manifest.bb0d3fabeee6ce1b2fd6c05909bb6caf.js",
+    "service-worker.js": "/p-frontend/service-worker.js",
+    "static/css/main.40c11b57.chunk.css.map": "/p-frontend/static/css/main.40c11b57.chunk.css.map",
+    "static/media/009-earth.svg": "/p-frontend/static/media/009-earth.75289520.svg",
+    "static/media/1.png": "/p-frontend/static/media/1.635cd59a.png",
+    "static/media/app_bg.png": "/p-frontend/static/media/app_bg.7b1275a9.png",
+    "static/media/moon.svg": "/p-frontend/static/media/moon.b713327f.svg",
+    "static/media/uranus.svg": "/p-frontend/static/media/uranus.c0d8e608.svg"
+  }
+}
