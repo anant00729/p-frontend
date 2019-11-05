@@ -163,5 +163,7 @@ body > #root > div {
 
 .uran-secondary{
   background-color: #6f8afe;
-  
+}
+.logo-font {
+  font-family: "Times New Roman", Times, serif;
 }

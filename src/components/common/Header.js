@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import alien from '../../svg/001-alien.svg';
-import earth from '../../svg/009-earth.svg';
-import moon from '../../svg/moon.svg';
-import uran from '../../svg/svg/uranus.svg';
+
+import earth from '../../app_img/009-earth.svg';
+import moon from '../../app_img/moon.svg';
+import uran from '../../app_img/uranus.svg';
 import { EARTH_THEME , MOON_THEME, URAN_THEME } from '../../actions/constants';
 
 import { onChangeTheme } from '../../actions/themeActions';
@@ -41,20 +41,20 @@ class Header extends Component {
         <section className={`fixed h-12 xl:h-16 w-full top-0 flex shadow-md justify-between px-4 ${a.p_color} z-20`}>
                 <div className="w-1/3 h-full flex content-center flex-wrap cursor-pointer">
                     <Link to={R_HOME} className="text-center flex items-center">
-                      <div className="w-12 h-12 rounded-full">
-                        <img src={alien} className="rounded-full  w-10 h-10 m-auto h-full"alt="asdasd"/>
+                      <div className={`w-10 h-10 rounded-full text-3xl xl:text-4xl ${a.h_color} logo-font -mt-2 xl:-mt-4 xl:ml-4`}>
+                        A
                       </div>
-                      <p className="content-center text-white pl-2 text-2xl">∞</p>
+                      <p></p>
                     </Link>
                 </div>
 
-                <div className="w-2/3 h-full flex content-center flex-wrap cursor-pointer justify-end ">
+                <div className="w-2/3 h-full flex content-center flex-wrap justify-end ">
                   
                   <div 
                   onClick={() => this.onThemeChange(EARTH_THEME)}
                   className=" flex items-center px-2">
-                    <img src={earth} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto  rounded-full self-center"alt="asdasd"/>
-                    <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Earth</p>  
+                    <img src={earth} className="xl:w-8 xl:h-8 w-6 h-6  self-center mx-auto  rounded-full self-center"alt="asdasd"/>
+                    {/* <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Earth</p>   */}
                   </div>
 
 
@@ -62,15 +62,15 @@ class Header extends Component {
                   onClick={() => this.onThemeChange(MOON_THEME)}
                   className=" flex items-center px-2">
                     <img src={moon} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto  rounded-full self-center"alt="asdasd"/>
-                    <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Moon</p>  
+                    {/* <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Moon</p>   */}
                   </div>
 
 
                   <div 
                   onClick={() => this.onThemeChange(URAN_THEME)}
-                  className=" flex items-center px-2">
-                    <img src={uran} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto  rounded-full self-center"alt="asdasd"/>
-                    <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Uranus</p>  
+                  className="flex items-center px-2">
+                    <img src={uran} className="xl:w-8 xl:h-8 w-6 h-6 self-center mx-auto rounded-full self-center"alt="asdasd"/>
+                    {/* <p className={`${a.h_color} ml-2 text-sm xl:text-base`}>Uranus</p>   */}
                   </div>
 
                 </div>

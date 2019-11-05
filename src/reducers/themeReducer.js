@@ -12,7 +12,8 @@ const initailState = {
       st_color: 'text-indigo-500',
       st_color_b: 'border-indigo-500',
       r_color : 'text-black',
-      h_color : 'text-white'
+      h_color : 'text-white',
+      ct_color : 'text-black'
   }
  }
 // on calling this.props.getProfiles() this method get called for GET_PROFILES

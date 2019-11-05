@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import earth from '../svg/svg/planet.svg';
-import fb from '../images/facebook.png';
-import insta from '../images/instagram.png';
-import tw from '../images/twitter.png';
-import li from '../images/linkedin.png';
-import testone from '../images/testTwo.png';
+import me from '../app_img/1.png';
+import fb from '../app_img/facebook.png';
+import tw from '../app_img/twitter.png';
+import li from '../app_img/linkedin.png';
+import app_bg from '../app_img/app_bg.png';
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { onChangeTheme } from '../actions/themeActions';
-import { EARTH_THEME , MOON_THEME } from '../actions/constants';
+import { EARTH_THEME  } from '../actions/constants';
 
 
  class HomePage extends Component {
@@ -17,7 +16,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
    state = {
         //image : 'https://mir-cdn.behance.net/v1/assets//1f294367814fa2f58be274b1a3c40d6f/c4262aa6-d869-4235-b4b5-80e9330be718_rwc_0x0x1400x206x1400.jpg?h=31d9ea10600ab2f0f31add00298c1319'
       app_colors : this.props.theme.app_colors,
-      image : testone
+      image : app_bg
     }
   
 
@@ -45,18 +44,18 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
     return (
       
       <div className="w-full relative pt-12">
-        <div className="relative h-64 xl:h-48">
-          <div className="h-64 xl:h-48 bg-cover bg-center" style={{backgroundImage: `url(${image})`}}></div>
-          <div className="absolute top-0 w-full h-64 xl:h-48 app-overlay"></div>
+        <div className="relative h-32 xl:h-48">
+          <div className="h-32 xl:h-48 bg-cover bg-center" style={{backgroundImage: `url(${image})`}}></div>
+          <div className="absolute top-0 w-full h-32 xl:h-48 app-overlay"></div>
         </div>
         
-        <div className={`w-full -mt-32 xl:-mt-12 mx-auto flex h-full ${a.s_color}`}>
+        <div className={`w-full -mt-24 xl:-mt-12 mx-auto flex h-full ${a.s_color}`}>
           <div className="hidden xl:w-1/3  xl:h-full xl:visible xl:flex xl:justify-center xl:flex-col xl:pl-10 xl:pr-4 card-width">
 
             <div className={`${card_color} xl:shadow-md xl:rounded pb-8 z-10`}>
               {/* this is iamge */}
-              <div className="w-24 h-24 self-center mt-8 mx-auto bg-white rounded-full border-1 border-white shadow-md">
-                <img src={earth} className="w-full h-full m-auto h-full self-center"alt="asdasd"/>
+              <div className="w-24 h-24 self-center mt-8 mx-auto">
+                <img src={me} className="w-full h-full bg-white rounded-full border-1 border-white shadow-md p-1"alt="asdasd"/>
               </div>
               
               {/* My Info */}
@@ -111,9 +110,12 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
 
             <div className="xl:hidden mx-auto">
                 {/* this is iamge */}
-                <div className="w-48 h-48 self-center mt-8 mx-auto bg-white rounded-full border-1 border-white shadow-md">
-                    <img src={earth} className="w-full h-full m-auto h-full self-center"alt="asdasd"/>
-                </div>
+                <div className="w-32 h-32 self-center mt-8 mx-auto">
+                  <img src={me} className="w-full h-full bg-white rounded-full border-1 border-white shadow-md p-1"alt="asdasd"/>
+               </div>
+                {/* <div className="w-32 h-32 self-center mt-8 mx-auto bg-white rounded-full border-1 border-white shadow-md">
+                    <img src={me} className="w-full h-full m-auto h-full self-center"alt="asdasd"/>
+                </div> */}
                 
                 {/* My Info */}
                 <h3 className={`text-xl text-center mt-2 ${a.t_color}`}>Anant S Awasthy</h3>
@@ -179,7 +181,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
@@ -187,7 +189,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
@@ -195,7 +197,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
@@ -203,7 +205,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
@@ -211,7 +213,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
@@ -219,7 +221,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
@@ -227,7 +229,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
@@ -235,7 +237,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
@@ -243,7 +245,7 @@ import { EARTH_THEME , MOON_THEME } from '../actions/constants';
                    <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
                       <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
                       <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.t_color}`}>The Coldest Sunset</div>
+                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
                       </div>
                    </div>
                 </li>
