@@ -8,7 +8,9 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { onChangeTheme } from '../actions/themeActions';
 import { EARTH_THEME  } from '../actions/constants';
-
+import dur from '../app_img/planet-earth-1.svg';
+import { Link } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
 
  class HomePage extends Component {
 
@@ -30,6 +32,8 @@ import { EARTH_THEME  } from '../actions/constants';
   
 
   render() {
+
+    let { article } = this.props 
     let { image , app_colors } = this.state
     const a = app_colors
 
@@ -41,7 +45,68 @@ import { EARTH_THEME  } from '../actions/constants';
       card_color = a.p_color
     }
 
-    console.log('a.ct_color :', a.ct_color);
+
+
+    // const all_art = article.all_articles.map((_a) => {
+
+    //   return (<li className={`mt-2 p-2`}>
+    //   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
+    //      <img className="w-full" src={_a.img} alt={_a.name}/>
+    //      <div className="py-4 px-4">
+    //         <div className={`text-md mb-2 ${a.ct_color}`}>{_a.name}</div>
+    //         <div className={`text-sm mb-2 ${a.tl_color}`}>{_a.desc}</div>
+    //      </div>
+    //   </div>
+    // </li>)
+    // })
+
+
+    const all_art_lg = article.all_articles.map((_a) => {
+
+      return (<div className="max-w-lg w-full lg:max-w-full lg:flex px-4 lg:px-8 xl:px-0 py-4 lg:py-2">
+      <div className="
+            shadow-md card-img-height lg:h-auto card-img-width lg:max-w-xs flex-none bg-cover rounded text-center overflow-hidden" 
+      style={{backgroundImage: `url(${_a.img})`}} 
+      title={_a.name}>
+        {/* <img className="w-full h-48 lg:h-auto" src={_a.img} alt={_a.name} /> */}
+      </div>
+      <div className={`lg:bg-transparent rounded-b lg:rounded-b-none lg:rounded-r py-4 lg:py-2 px-4 lg:px-4 flex flex-col justify-between leading-normal ${card_color} xl:mr-4`}>
+        <div className="mb-4">
+          <div className={`lg:${a.tl_color} ${a.ct_color} text-xl mb-2`}>{_a.name}</div>
+          <p className={`lg:${a.tl_color} ${a.ct_color} text-sm`}
+          style={{minHeight : '4rem'}}
+          >{_a.desc}</p>
+        </div>
+        <div className="flex p-1">
+
+          {_a.google ? <img 
+          onClick={() => window.open(_a.google, '_blank')}
+          className="w-6 h-6 mr-2 cursor-pointer" 
+          src={"https://www.gstatic.com/android/market_images/web/favicon_v2.ico"} alt={_a.name} /> : null}
+          {_a.apple ? <i 
+          onClick={() => window.open(_a.apple, '_blank')}
+          className={`fa fa-apple text-2xl lg:${a.tl_color} ${a.ct_color} cursor-pointer mr-3`}></i> : null}
+          
+          {_a.web ? <i 
+          onClick={() => window.open(_a.web, '_blank')}
+          className={`fa fa-globe text-2xl lg:${a.tl_color} ${a.ct_color} cursor-pointer`}></i> : null}
+          
+        </div>
+        <div className="flex items-center mt-2">
+          <img className="w-6 h-6 mr-2" src={dur} alt={_a.name} />
+          <div className="text-sm">
+            {/* <p className="text-gray-900 leading-none">{"App"}</p> */}
+            <p className={`lg:${a.tl_color} ${a.ct_color}`}>{_a.dur}</p>
+          </div>
+        </div>
+      </div>
+    </div>)
+    })
+
+    
+    
+
+    console.log('article :', article.all_articles);
     
 
     return (
@@ -70,14 +135,20 @@ import { EARTH_THEME  } from '../actions/constants';
               </div>
 
               <div className="flex px-8 mt-6 max-w-2xl m-auto justify-center mb-4" >
-                <div className="w-6 h-6 mr-4">
-                  <img src={fb} className="rounded-full shadow-sm"alt="asdasd"/>
-                </div>
-                <div className="w-6 h-6 mr-4">
-                  <img src={tw} className="rounded-full shadow-sm"alt="asdasd"/>
-                </div>
-                <div className="w-6 h-6 mr-4">
+                <div 
+                onClick={() => window.open("https://www.linkedin.com/in/anant-awasthy-230119134/", '_blank')}
+                className="w-6 h-6 mr-4 cursor-pointer">
                   <img src={li} className="rounded-full shadow-sm"alt="asdasd"/>
+                </div>
+                <div 
+                onClick={() => window.open("https://github.com/anant00729", '_blank')}
+                className="mr-4 cursor-pointer">
+                    <i className={`fa fa-github git-icon ${a.ct_color}`}></i>
+                </div>
+                <div 
+                onClick={() => window.open("https://www.facebook.com/anant.awasthy", '_blank')}
+                className="w-6 h-6 mr-4 cursor-pointer">
+                  <img src={fb} className="rounded-full shadow-sm"alt="asdasd"/>
                 </div>
               </div>
 
@@ -129,14 +200,20 @@ import { EARTH_THEME  } from '../actions/constants';
                 </div>
 
                 <div className="flex px-8 mt-6 max-w-2xl m-auto justify-center mb-4" >
-                  <div className="w-8 h-8 mr-4">
-                    <img src={fb} className="rounded-full shadow-sm"alt="asdasd"/>
-                  </div>
-                  <div className="w-8 h-8 mr-4">
-                    <img src={tw} className="rounded-full shadow-sm"alt="asdasd"/>
-                  </div>
-                  <div className="w-8 h-8 mr-4">
+                  <div 
+                  onClick={() => window.open("https://www.linkedin.com/in/anant-awasthy-230119134/", '_blank')}
+                  className="w-8 h-8 mr-4 cursor-pointer">
                     <img src={li} className="rounded-full shadow-sm"alt="asdasd"/>
+                  </div>
+                  <div 
+                  onClick={() => window.open("https://github.com/anant00729", '_blank')}
+                  className="mr-4 cursor-pointer">
+                    <i className={`fa fa-github git-icon-lg ${a.ct_color}`}></i>
+                  </div>
+                  <div 
+                  onClick={() => window.open("https://www.facebook.com/anant.awasthy", '_blank')}
+                  className="w-8 h-8 mr-4 cursor-pointer">
+                    <img src={fb} className="rounded-full shadow-sm"alt="asdasd"/>
                   </div>
                 </div>
 
@@ -171,87 +248,18 @@ import { EARTH_THEME  } from '../actions/constants';
               </div>
 
               <div className="xl:mx-0 mx-10 xl:mt-12 mt-0 xl:text-base text-xs sm:text-base transparent">
-                <ul className="flex justify-center xl:justify-start ">
+                <ul className="flex justify-start  xl:justify-start ">
                    <li className={`px-2 xl:px-4 my-2 py-2 border-b-4 ${a.st_color_b} rounded-b-sm rounded-t-sm ${a.st_color} cursor-pointer`}>Work</li>
-                   <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>Moodboard</li>
+                   {/* <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>Moodboard</li>
                    <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>Android</li>
                    <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>Flutter</li>
-                   <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>NodeJS</li>
+                   <li className={`px-2 xl:px-4 py-4 cursor-pointer ${a.r_color}`}>NodeJS</li> */}
                 </ul>
              </div>
              <ul className="flex flex-wrap justify-center xl:justify-start">
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
-                <li className={`mt-2 p-2`}>
-                   <div className={`card-width-content rounded overflow-hidden shadow ${card_color}`}>
-                      <img className="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains"/>
-                      <div className="py-4 px-6">
-                         <div className={`text-md mb-2 ${a.ct_color}`}>The Coldest Sunset</div>
-                      </div>
-                   </div>
-                </li>
+                
+                {/* {all_art} */}
+                {all_art_lg}
                 
              </ul>
 
@@ -267,11 +275,13 @@ import { EARTH_THEME  } from '../actions/constants';
 
 
 const mapStateToProps = state => ({
-   theme : state.theme
+   theme : state.theme,
+   article : state.article
  })
  
  HomePage.propTypes = {
-   theme : PropTypes.object.isRequired
+   theme : PropTypes.object.isRequired,
+   article : PropTypes.object.isRequired,
  }
  
  
